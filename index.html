@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="th">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>w-washop</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="inner">
+      <div class="brand">
+        <div class="logo">w-washop</div>
+        <div class="tag">ร้านค้าออนไลน์</div>
+      </div>
+      <nav class="nav">
+        <a href="#">หน้าแรก</a>
+        <a href="#">สินค้าทั้งหมด</a>
+        <a href="#">เติมเงิน</a>
+        <a href="#">ติดต่อ</a>
+      </nav>
+      <div class="actions">
+        <button class="btn ghost" id="open-login">เข้าสู่ระบบ</button>
+        <button class="btn primary" id="open-signup">สมัครสมาชิก</button>
+      </div>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="hero-inner">
+      <div class="carousel" id="carousel">
+        <div class="slide active" style="--accent: linear-gradient(135deg,#0d47a1,#1976d2);">
+          <div class="slide-content">
+            <h1>แจกโปรแรงวันนี้!</h1>
+            <p>สินค้าคัดพิเศษ ลดสูงสุด 50% — เฉพาะสมาชิก</p>
+            <a class="btn cta" href="#">ดูสินค้าลดราคา</a>
+          </div>
+        </div>
+        <div class="slide" style="--accent: linear-gradient(135deg,#2e7d32,#66bb6a);">
+          <div class="slide-content">
+            <h1>เติมเงินทันใจ</h1>
+            <p>รองรับหลายช่องทาง เติมได้สะดวก</p>
+            <a class="btn cta" href="#">เติมเงิน</a>
+          </div>
+        </div>
+        <div class="slide" style="--accent: linear-gradient(135deg,#fbc02d,#ffee58);">
+          <div class="slide-content">
+            <h1>ของมาใหม่</h1>
+            <p>อัปเดตทุกสัปดาห์ เด็ดๆ ทั้งนั้น</p>
+            <a class="btn cta" href="#">ดูของใหม่</a>
+          </div>
+        </div>
+        <div class="slide" style="--accent: linear-gradient(135deg,#b71c1c,#ef5350);">
+          <div class="slide-content">
+            <h1>บริการลูกค้า 24/7</h1>
+            <p>เราพร้อมช่วยคุณตลอดเวลา</p>
+            <a class="btn cta" href="#">ติดต่อเรา</a>
+          </div>
+        </div>
+        <button class="slide-prev" id="prev">&lt;</button>
+        <button class="slide-next" id="next">&gt;</button>
+      </div>
+    </div>
+  </section>
+
+  <section class="stats">
+    <div class="inner stats-grid">
+      <div class="stat-card">
+        <div class="number" id="stat-users">0</div>
+        <div class="label">ผู้ใช้ทั้งหมด</div>
+      </div>
+      <div class="stat-card">
+        <div class="number" id="stat-products">0</div>
+        <div class="label">สินค้าทั้งหมด</div>
+      </div>
+      <div class="stat-card">
+        <div class="number" id="stat-stock">0</div>
+        <div class="label">สต๊อกรวม</div>
+      </div>
+      <div class="stat-card">
+        <div class="number" id="stat-sold">0</div>
+        <div class="label">ขายแล้ว</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="content inner">
+    <h2 class="section-title">สินค้าขายดี</h2>
+    <div class="products-grid" id="products">
+      <!-- JS will inject product cards -->
+    </div>
+  </section>
+
+  <section class="notice inner">
+    <h3>อ่านก่อนซื้อ</h3>
+    <p>กรุณาตรวจสอบรายละเอียดสินค้า ราคา และนโยบายการคืนสินค้าให้เรียบร้อยก่อนสั่งซื้อเพื่อป้องกันความเข้าใจผิด</p>
+  </section>
+
+  <footer class="site-footer">
+    <div class="inner">
+      <div>© 2025 w-washop</div>
+      <div>ธีม: น้ำเงิน · เขียว · เหลือง · แดง</div>
+    </div>
+  </footer>
+
+  <!-- Simple modal for login/signup (client-only) -->
+  <div id="modal" class="modal hidden">
+    <div class="modal-panel">
+      <button class="modal-close" id="modal-close">✕</button>
+      <div id="modal-body"></div>
+    </div>
+  </div>
+
+<script src="script.js"></script>
+</body>
+</html>
