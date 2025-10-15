@@ -74,3 +74,70 @@ document.addEventListener('DOMContentLoaded', ()=>{
   });
   document.getElementById('modal-close').addEventListener('click', closeModal);
 });
+// -----------------------------
+// 1. สมัครสมาชิก
+// -----------------------------
+function register() {
+  const user = document.getElementById("reg-user").value;
+  const pass = document.getElementById("reg-pass").value;
+
+  if (!user || !pass) {
+    alert("กรอกข้อมูลให้ครบ!");
+    return;
+  }
+
+  let users = JSON.parse(localStorage.getItem("users") || "[]");
+
+  if (users.find(u => u.user === user)) {
+    alert("ชื่อผู้ใช้นี้มีอยู่แล้ว!");
+    return;
+  }
+
+  users.push({ user, pass });
+  localStorage.setItem("users", JSON.stringify(users));
+  alert("สมัครสมาชิกสำเร็จ!");
+  window.location.href = "login.html";
+}
+
+// -----------------------------
+// 2. เข้าสู่ระบบผู้ใช้ทั่วไป
+// -----------------------------
+function loginUser() {
+  const user = document.getElementById("user").value;
+  const pass = document.getElementById("pass").value;
+
+  const users = JSON.parse(localStorage.getItem("users") || "[]");
+  const found = users.find(u => u.user === user && u.pass === pass);
+
+  if (found) {
+    localStorage.setItem("currentUser", user);
+    alert("เข้าสู่ระบบสำเร็จ!");
+    window.location.href = "index.html";
+  } else {
+    alert("ชื่อผู้ใช้หรือรหัสไม่ถูกต้อง!");
+  }
+}
+
+// -----------------------------
+// 3. ระบบแอดมิน
+// -----------------------------
+const ADMIN_USER = "admin";
+const ADMIN_PASS = "1234";
+
+function loginAdmin() {
+  const user = document.getElementById("adminUser").value;
+  const pass = document.getElementById("adminPass").value;
+
+  if (user === ADMIN_USER && pass === ADMIN_PASS) {
+    localStorage.setItem("isAdmin", "true");
+    window.location.href = "admin.html";
+  } else {
+    alert("รหัสแอดมินไม่ถูกต้อง!");
+  }
+}
+
+function logout() {
+  localStorage.removeItem("currentUser");
+  localStorage.removeItem("isAdmin");
+  window.location.href = "index.html";
+}
