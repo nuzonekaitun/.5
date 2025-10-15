@@ -2,12 +2,12 @@
 
 // Sample product data (could be loaded from localStorage or API)
 const SAMPLE_PRODUCTS = [
-  {id:1, name:'สินค้า A', price:120, stock:10},
-  {id:2, name:'สินค้า B', price:250, stock:6},
-  {id:3, name:'สินค้า C', price:75, stock:20},
-  {id:4, name:'สินค้า D', price:199, stock:3},
-  {id:5, name:'สินค้า E', price:420, stock:8},
-  {id:6, name:'สินค้า F', price:59, stock:40}
+  {id:1, name:'ไก่เทพ', price:120, stock:10},
+  {id:2, name:'ไก่โคตรเทพ', price:250, stock:6},
+  {id:3, name:'ไก่ตัน6-7หมัด', price:75, stock:20},
+  {id:4, name:'ไก่เผ่าวีไก่เผ่าวีสี่', price:199, stock:3},
+  {id:5, name:'ไอดีสุ่มผลไอดีสุ่มผลถาวร', price:420, stock:8},
+  {id:6, name:'ไก่ตัน6หมัด', pric :45, stock:40}
 ];
 
 function $(id){ return document.getElementById(id); }
@@ -43,7 +43,7 @@ function renderProducts(){
 
 // Simple cart simulation (local only)
 function addToCart(id){
-  alert('เพิ่มสินค้าเข้าไปในตะกร้า (จำลอง)');
+  alert('เพิ่มสินค้าเข้าไปในตะกา (จำลอง)');
 }
 
 // Stats (demo numbers derived from sample products)
@@ -140,4 +140,4 @@ function logout() {
   localStorage.removeItem("currentUser");
   localStorage.removeItem("isAdmin");
   window.location.href = "index.html";
-}
+    }
